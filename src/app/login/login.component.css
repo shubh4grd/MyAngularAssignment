@@ -1,0 +1,39 @@
+/* CSS */
+* {
+  box-sizing: border-box;
+}
+.column {
+  float: left;
+  width: 40%;
+  padding: 10px;
+  height: 46.2em;
+}
+.right {
+  width: 60%;
+}
+.left {
+  padding: 50px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* style for container mat card */
+.container mat-card {
+  padding: 0px;
+}
+/* Style for form class */
+.form-class {
+  padding: 20px;
+}
+.formBottom {
+  display: flex;
+  flex-direction: row;
+}
+.formBottom p {
+  color: tomato;
+  margin-left: 100px;
+}

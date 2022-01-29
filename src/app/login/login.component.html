@@ -1,0 +1,45 @@
+<!-- Login Page -->
+<!-- Progress Bar -->
+<mat-progress-bar mode="indeterminate" *ngIf="!isLoading"></mat-progress-bar>
+<div style="width: 100%; height: 100%;" *ngIf="isLoading">
+    <!-- main container -->
+    <div class="row">
+        <!-- left side of login page  -->
+        <div class="column left" style="background-color:rgb(241, 241, 241);">
+            <h3>Welcome to</h3>
+            <h4>University of Commons</h4>
+            <p id="tagline">Volunteer Management made easy</p>
+        </div>
+        <!-- right side of login page  -->
+        <div class="column right">
+            <!-- Login Container -->
+            <div class="container" fxLayoutAlign="center center" fxFlexFill>
+                <!-- Login Heading -->
+                <mat-card fxFlex='50'>
+                    <h1 style="margin-bottom: 50px; text-align: center;">University of Commons</h1>
+                    <form fxLayoutAlign="Strech" fxLayout="column" class="form-class" [formGroup]="loginForm">
+                        <!-- User & PasswordField -->
+                        <mat-form-field>
+                            <input matInput placeholder="Username" formControlName="usernameLabel" id="usernameLabel">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'"
+                                formControlName="passwordLabel" id="passwordLabel" required>
+                            <mat-icon style="cursor: pointer;" matSuffix (click)="hide = !hide">{{hide ?
+                                'visibility_off' : 'visibility'}}</mat-icon>
+                        </mat-form-field>
+                        <div class="formBottom" style="width: 100%;">
+                            <mat-checkbox style="width: 50%;" class="example-margin">Remember me</mat-checkbox>
+                            <p style="width: 50%;">Forgot Password?</p>
+                        </div>
+                        <button mat-raised-button color="primary" type="submit"
+                            (click)="login('dashboard')" style="margin-top: 30px;">Submit</button>
+                            <p style="text-align:center; margin-top: 20px;">Don't have an account?<span style="color: blue; font-weight: 500;">Sign Up</span></p>
+                    </form>
+                </mat-card>
+            </div>
+            <!-- login container ends -->
+        </div>
+    </div>
+    <!-- main container ends -->
+</div>
